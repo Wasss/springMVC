@@ -42,15 +42,10 @@ public class FareController {
 			@RequestParam("hotelRank") int hotelRank,
 			@RequestParam(value="discountCode", required = false) String discountCode) {
 
-		double taxiFare = fareService.calculateTaxiFares(distance, waitingTime,
-				nbSuit, regClient, nightSup);
-		double hotelFare = fareService.calculateHotelFare(numberOfNights,
-				breakfast, hotelRank, discountCode);
-		double totalFare = taxiFare + hotelFare;
+		
 
 		ModelAndView modelAndView = new ModelAndView("FareResult");
-		modelAndView.addObject("fare", totalFare);
-		modelAndView.addObject("date", new Date());
+		
 		return modelAndView;
 	}
 }
