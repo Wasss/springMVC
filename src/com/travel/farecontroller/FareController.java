@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-//test git
+//controller module that accepts parameters from client side
 @Controller
 public class FareController {
 
@@ -29,7 +29,7 @@ public class FareController {
 		ModelAndView modelAndView = new ModelAndView("FareForm");
 		return modelAndView;
 	}
-
+	// submited form
 	@RequestMapping(value = "/submitFareForm.html", method = RequestMethod.POST)
 	protected ModelAndView submitAdmissionForm(
 			@RequestParam("rideDistance") Long distance,
@@ -47,5 +47,9 @@ public class FareController {
 		ModelAndView modelAndView = new ModelAndView("FareResult");
 		
 		return modelAndView;
+	}
+	
+	public void getBestPrice(){
+		System.out.println("test");
 	}
 }
