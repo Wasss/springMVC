@@ -29,7 +29,7 @@ public class FareController {
 		ModelAndView modelAndView = new ModelAndView("FareForm");
 		return modelAndView;
 	}
-	// submited addmission form
+	// submited form
 	@RequestMapping(value = "/submitFareForm.html", method = RequestMethod.POST)
 	protected ModelAndView submitAdmissionForm(
 			@RequestParam("rideDistance") Long distance,
