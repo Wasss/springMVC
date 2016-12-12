@@ -53,4 +53,8 @@ public class FareController {
 		modelAndView.addObject("date", new Date());
 		return modelAndView;
 	}
+	
+	public void getBestPrice(){
+		
+	}
 }
