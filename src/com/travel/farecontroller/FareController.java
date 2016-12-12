@@ -55,6 +55,6 @@ public class FareController {
 	}
 	
 	public void getBestPrice(){
-		
+		System.out.println("test");
 	}
 }
