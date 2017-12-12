@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 //controller module that accepts parameters from client side
+//this is a test for login branch
 @Controller
 public class FareController {
 
