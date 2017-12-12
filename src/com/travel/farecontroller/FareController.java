@@ -55,6 +55,6 @@ public class FareController {
 	}
 	
 	public void signup(){
-		
+		System.out.println("test");
 	}
 }
