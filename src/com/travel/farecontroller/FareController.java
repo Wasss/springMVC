@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-//controller module that accepts parameters from client side
+//controller module that accepts parameters from client side test modicification
 @Controller
 public class FareController {
 
