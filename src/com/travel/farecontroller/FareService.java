@@ -70,4 +70,19 @@ public class FareService implements IFareService{
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	
+	public double calculateTravelFare(long distance, int waitingTime, int nubOfSuitCases, int nightNumber, boolean breakfastIncluded, boolean useTaxi,
+			boolean regularClient, int hotelRank, String discountCode) {
+		double fare = 0;
+
+		if (useTaxi) {
+			fare = calculateTaxiFares(distance, waitingTime, nubOfSuitCases, regularClient, false);
+		}
+		double hotelPrice = calculateHotelFare(nightNumber, true,
+				hotelRank, discountCode);
+
+		fare = fare + hotelPrice;
+
+		return fare;
+	}
 }

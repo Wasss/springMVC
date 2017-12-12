@@ -7,5 +7,8 @@ public interface IFareService {
 
 	public abstract double calculateHotelFare(int numberOfNights,
 			boolean breakfast, int hotelRank, String discountCode);
+	
+	public abstract double calculateTravelFare(long distance, int waitingTime, int nubOfSuitCases, int nightNumber, boolean breakfastIncluded, boolean useTaxi,
+			boolean regularClient, int hotelRank, String discountCode);
 
 }

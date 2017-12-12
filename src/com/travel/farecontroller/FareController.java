@@ -29,27 +29,28 @@ public class FareController {
 		ModelAndView modelAndView = new ModelAndView("FareForm");
 		return modelAndView;
 	}
+
 	// submited form
 	@RequestMapping(value = "/submitFareForm.html", method = RequestMethod.POST)
-	protected ModelAndView submitAdmissionForm(
-			@RequestParam("rideDistance") Long distance,
-			@RequestParam("waitingTime") int waitingTime,
-			@RequestParam("nbSuit") int nbSuit,
+	protected ModelAndView submitAdmissionForm(@RequestParam("rideDistance") Long distance,
+			@RequestParam("waitingTime") int waitingTime, @RequestParam("nbSuit") int nbSuit,
 			@RequestParam(value = "nightSup", required = false) boolean nightSup,
 			@RequestParam(value = "regClient", required = false) boolean regClient,
-			@RequestParam("nbOfNights") int numberOfNights,
-			@RequestParam("breakfast") boolean breakfast,
+			@RequestParam("nbOfNights") int numberOfNights, @RequestParam("breakfast") boolean breakfast,
 			@RequestParam("hotelRank") int hotelRank,
-			@RequestParam(value="discountCode", required = false) String discountCode) {
-
-		
+			@RequestParam(value = "discountCode", required = false) String discountCode) {
 
 		ModelAndView modelAndView = new ModelAndView("FareResult");
-		
+
+		double fare = fareService.calculateTravelFare(distance, waitingTime, nbSuit, numberOfNights, breakfast, true, regClient,
+				hotelRank, discountCode);
+		modelAndView.addObject("fare", fare);
+		modelAndView.addObject("date", new Date());
+
 		return modelAndView;
 	}
-	
-	public void getBestPrice(){
+
+	public void getBestPrice() {
 		System.out.println("test");
 	}
 }
