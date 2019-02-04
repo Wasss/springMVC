@@ -67,8 +67,25 @@ public class FareService implements IFareService{
 	@Override
 	public double calculateTaxiFares(long distance, int waitingTime, int numbOfSuiteCases, boolean regularClient,
 			boolean night) {
-		// TODO Auto-generated method stub
-		return 0;
+		double fare = 2;
+		if (distance > 1000) {
+			fare = fare + 0.25 * (distance - 1000) / 250;
+		}
+		if (waitingTime > 3) {
+			fare = fare + 0.2 * (waitingTime - 3) / 2;
+		}
+		if (numbOfSuiteCases > 1) {
+			fare = fare + numbOfSuiteCases * 2;
+		} else {
+			fare = fare + 1;
+		}
+		if (regularClient) {
+			if (night) {
+				fare = fare + fare * 0.25;
+			}
+			fare = fare * 0.9;
+		}
+		return fare;
 	}
 	
 	public double calculateTravelFare(long distance, int waitingTime, int nubOfSuitCases, int nightNumber, boolean breakfastIncluded, boolean useTaxi,
