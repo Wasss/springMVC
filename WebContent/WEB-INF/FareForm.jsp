@@ -2,7 +2,7 @@
 <html>
 <body style="background-color: beige;">
 	<div
-		style="font-family: 'museo700', sans-serif; font-size: 30px; font-weight: 400; color: #fa6900; padding: 1px; background-color:khaki; text-align: center;">
+		style="font-family: 'museo700', sans-serif; font-size: 30px; font-weight: 400; color: snow; padding: 1px; background-color:cadetblue; text-align: center;">
 		<h1>${headerMsg}</h1>
 	</div>
 	<div
@@ -59,6 +59,6 @@
 
 		<input type="submit" value="submit">
 	</form>
-	<div style="height: 20%; width: 100%; background-color: khaki"></div>
+	<div style="height: 20%; width: 100%; background-color: cadetblue"></div>
 <body>
 </html>
